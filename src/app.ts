@@ -1,11 +1,9 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import authRouter from './auth';
 
 const app = express();
-app.use(express.json());
 
-app.use(bodyParser.json());
-app.use(express.raw({ type: 'application/json' }));
+app.use('/', authRouter);
 
 
 export default app;
